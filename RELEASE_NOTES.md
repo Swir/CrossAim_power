@@ -1,16 +1,22 @@
-# CrossAim Power v1.0.0
+# CrossAim Power v1.1.0
 
-First public release.
+## UI / usability
+- Rebuilt the main window around responsive scrollable panels
+- Fixed controls overlapping when the app window is reduced
+- Added automatic horizontal/vertical layout switching under 760 px
+- Added a resizable splitter
+- Added system tray integration
+- Added optional start-minimized and close-to-tray behavior
+- Added a clear overlay state indicator
 
-## Included
-- Power Smart Contrast adaptive color engine
-- Multi-zone background analysis
+## Display / performance
+- Added configurable color reaction interval (16–100 ms)
+- Added Fast / Balanced / Smooth quick reaction presets
+- Improved compact-window and high-DPI behavior
+
+## Core
+- Power Smart Contrast multi-zone adaptive color engine
 - Automatic contrasting outline
-- Anti-flicker color hysteresis
-- 32×32 pixel crosshair editor
-- Built-in crosshair shapes
-- Persistent settings
-- RMB temporary hide
-- F8 global overlay toggle
-- CS2-friendly borderless overlay
-- Windows EXE build pipeline
+- Anti-flicker hysteresis
+- 32×32 reticle editor
+- F8 overlay toggle

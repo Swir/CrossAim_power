@@ -8,10 +8,6 @@ on:
 permissions:
   contents: write
 
-concurrency:
-  group: crossaim-power-release
-  cancel-in-progress: true
-
 jobs:
   build-release:
     runs-on: windows-latest
@@ -31,42 +27,38 @@ jobs:
           pip install -r requirements.txt
           pip install pyinstaller
 
-      - name: Generate CrossAim Power icons
-        run: python make_icon.py
-
-      - name: Build Windows EXE
+      - name: Build EXE
         run: >
           pyinstaller --noconfirm --clean --windowed --onefile
           --name CrossAim_Power
           --icon crossaim_power.ico
-          --add-data "crossaim_power.png;."
+          --add-data "crossaim_power.ico;."
           --collect-all mss
-          crossaim_power.py
+          crossaim_power_v11.py
 
-      - name: Package release
+      - name: Package
         shell: pwsh
         run: |
           New-Item -ItemType Directory -Force release
           Copy-Item dist\CrossAim_Power.exe release\CrossAim_Power.exe
           Copy-Item README.md release\README.md
           Copy-Item LICENSE release\LICENSE
-          Copy-Item crossaim_power.png release\crossaim_power.png
-          Compress-Archive -Path release\* -DestinationPath CrossAim_Power_v1.0.0_Windows.zip -Force
+          Compress-Archive -Path release\* -DestinationPath CrossAim_Power_v1.1.0_Windows.zip -Force
 
-      - name: Publish GitHub Release
+      - name: Create or update v1.1.0 release
         shell: bash
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          if gh release view v1.0.0 >/dev/null 2>&1; then
-            gh release upload v1.0.0 \
+          if gh release view v1.1.0 >/dev/null 2>&1; then
+            gh release upload v1.1.0 \
               "release/CrossAim_Power.exe" \
-              "CrossAim_Power_v1.0.0_Windows.zip" \
+              "CrossAim_Power_v1.1.0_Windows.zip" \
               --clobber
           else
-            gh release create v1.0.0 \
+            gh release create v1.1.0 \
               "release/CrossAim_Power.exe" \
-              "CrossAim_Power_v1.0.0_Windows.zip" \
-              --title "CrossAim Power v1.0.0" \
-              --notes-file RELEASE_NOTES.md
+              "CrossAim_Power_v1.1.0_Windows.zip" \
+              --title "CrossAim Power v1.1.0" \
+              --notes "CrossAim Power v1.1.0 fixes compact-window overlap with responsive scrollable panels and automatic stacked layout, plus tray support and adjustable reaction speed."
           fi
