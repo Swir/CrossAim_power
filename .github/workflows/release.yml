@@ -27,12 +27,15 @@ jobs:
           pip install -r requirements.txt
           pip install pyinstaller
 
+      - name: Generate app icon
+        run: python make_icon.py
+
       - name: Build EXE
         run: >
           pyinstaller --noconfirm --clean --windowed --onefile
           --name CrossAim_Power
           --icon crossaim_power.ico
-          --add-data "crossaim_power.ico;."
+          --add-data "crossaim_power.png;."
           --collect-all mss
           crossaim_power_v12.py
 
