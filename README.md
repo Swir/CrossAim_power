@@ -4,7 +4,7 @@
 
 CrossAim Power is a lightweight Windows overlay with a smart color engine that analyzes the pixels around the center of the screen and selects a highly visible reticle color.
 
-![CrossAim Power](crossaim_power.png)
+![CrossAim Power](crossaim_power.svg)
 
 ## ✨ Highlights
 
@@ -37,6 +37,7 @@ Requires Python 3.10+ on Windows 10/11.
 
 ```bash
 py -m pip install -r requirements.txt
+py make_icon.py
 py crossaim_power.py
 ```
 
@@ -50,7 +51,7 @@ Run:
 build_exe.bat
 ```
 
-The script converts the project icon for Windows and builds:
+The build generates the Windows icon deterministically and creates:
 
 ```text
 dist\CrossAim_Power.exe
@@ -88,6 +89,7 @@ Third-party anti-cheat and tournament platform rules can differ, so check the cu
 - Python 3.10+ when running from source
 - PySide6
 - MSS
+- Pillow (icon generation)
 
 ## 🔐 Privacy
 
