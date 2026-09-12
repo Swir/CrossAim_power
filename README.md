@@ -6,17 +6,27 @@ CrossAim Power is a lightweight customizable crosshair overlay with a smart colo
 
 ![CrossAim Power](crossaim_power.png)
 
+## 🆕 v1.2.0
+
+- Permanent footer: **Made by Swir** with clickable GitHub profile and repository links
+- Reticle preset library: CS2 Tiny Dot, Precision Cross, Ring + Dot, Classic Cross, High Visibility
+- Multi-monitor selector and correct centering on the chosen display
+- Live adaptive-color preview chip showing the current reticle color
+- Window position/size and splitter layout are remembered
+- Existing compact responsive layout, tray controls and adaptive engine retained
+
 ## 🆕 v1.1.0
 
-- Responsive control panel — no more overlapping widgets when the window is made smaller
-- Scrollable settings and editor panels
-- Automatic horizontal/vertical layout switch below 760 px
-- Resizable splitter between settings and the 32×32 editor
-- Windows system-tray integration
-- Optional **close to tray** and **start minimized**
-- Adjustable adaptive-color reaction interval (16–100 ms)
-- Live **OVERLAY ON/OFF** indicator
-- Improved compact-window and high-DPI behavior
+- Responsive control panel: no more overlapping widgets when the window is made smaller
+- Scrollable left and right panels
+- Resizable splitter between settings and editor
+- Multi-monitor selector
+- System tray support
+- Optional close-to-tray behavior
+- Optional start minimized
+- Adjustable adaptive-color reaction interval
+- Clear overlay ON/OFF indicator
+- Improved handling for compact window sizes and high-DPI displays
 
 ## ✨ Highlights
 
@@ -29,26 +39,61 @@ CrossAim Power is a lightweight customizable crosshair overlay with a smart colo
 - ✨ Automatic contrasting outline
 - 🧊 Anti-flicker / color hysteresis
 - 🧩 Built-in 32×32 pixel crosshair editor
+- 💾 Presets with JSON import/export
+- 🎮 Per-game process profiles, including `cs2.exe`
 - 🖱️ Optional RMB temporary hide
 - ⌨️ `F8` global overlay toggle
+- 🎯 Pixel-perfect X/Y positioning
 - 🪟 Click-through transparent Windows overlay
+
+## 🕹️ Built-in crosshairs
+
+Dot • Cross • Cross + Dot • Circle • Circle + Dot • Tiny Ring • T • X • Custom
 
 ## 🚀 Quick start
 
-Download the newest Windows build from **Releases** and run `CrossAim_Power.exe`.
+### Option 1 — Release
 
-To run v1.1 from source:
+Download the newest Windows build from **Releases** and run:
+
+`CrossAim_Power.exe`
+
+### Option 2 — Python
+
+Requires Python 3.10+.
 
 ```bash
 py -m pip install -r requirements.txt
-py crossaim_power_v11.py
+py crossaim_power_v12.py
+```
+
+Or simply launch:
+
+```text
+run.bat
+```
+
+## 🔨 Build Windows EXE
+
+Run:
+
+```text
+build_exe.bat
+```
+
+The generated application will be:
+
+```text
+dist\CrossAim_Power.exe
 ```
 
 ## 🎮 CS2
 
-For the most reliable overlay behavior use **Fullscreen Windowed / Borderless**.
+For the most reliable overlay behavior use:
 
-CrossAim Power is a visual overlay. It does **not** read/write CS2 memory, inject DLLs, inspect player/entity data, automate aiming, control recoil, or automate shooting.
+**Fullscreen Windowed / Borderless**
+
+CrossAim Power is designed as a visual overlay. It does **not** read or write CS2 memory, inject DLLs, inspect player/entity data, automate aiming, control recoil, or automate shooting.
 
 Third-party anti-cheat and tournament platform rules can differ. Always check the current rules of the platform where you play.
 
@@ -58,13 +103,19 @@ Third-party anti-cheat and tournament platform rules can differ. Always check th
 |---|---|
 | `F8` | Show / hide overlay |
 | Hold `RMB` | Temporarily hide (optional) |
-| Tray icon | Restore controls / toggle overlay / quit |
+| `Ctrl + Alt + Arrow` | Move by 1 pixel |
+| `Ctrl + Alt + Shift + Arrow` | Move by 10 pixels |
 
 ## 🧠 Adaptive modes
 
 **Power Smart Contrast** is the recommended mode. It evaluates multiple surrounding zones and selects a stable high-contrast color.
 
-Other modes include Adaptive Complement, Adaptive B/W and fixed colors.
+Other modes:
+
+- Adaptive Complement
+- Adaptive B/W
+- Adaptive Invert
+- Fixed color
 
 ## 📦 Requirements
 
@@ -83,4 +134,4 @@ MIT License — see [LICENSE](LICENSE).
 
 ---
 
-Made by **Swir**.
+Made by **Swir** • [GitHub](https://github.com/Swir) • [CrossAim Power repository](https://github.com/Swir/CrossAim_power)
