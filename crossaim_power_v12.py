@@ -20,6 +20,9 @@ class CrossAimPowerV12(v11.ResponsiveMain):
         self._selected_monitor = 0
         super().__init__()
         self.setWindowTitle(f"CrossAim Power {VERSION}")
+        # v1.1 resizes after the base settings load; load again here so v1.2
+        # can restore saved geometry, monitor and splitter state correctly.
+        self.load()
         self._update_color_chip()
 
     def build_ui(self):
