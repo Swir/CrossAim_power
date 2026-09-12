@@ -34,7 +34,7 @@ jobs:
           --icon crossaim_power.ico
           --add-data "crossaim_power.ico;."
           --collect-all mss
-          crossaim_power_v11.py
+          crossaim_power_v12.py
 
       - name: Package
         shell: pwsh
@@ -43,22 +43,22 @@ jobs:
           Copy-Item dist\CrossAim_Power.exe release\CrossAim_Power.exe
           Copy-Item README.md release\README.md
           Copy-Item LICENSE release\LICENSE
-          Compress-Archive -Path release\* -DestinationPath CrossAim_Power_v1.1.0_Windows.zip -Force
+          Compress-Archive -Path release\* -DestinationPath CrossAim_Power_v1.2.0_Windows.zip -Force
 
-      - name: Create or update v1.1.0 release
+      - name: Create or update v1.2.0 release
         shell: bash
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          if gh release view v1.1.0 >/dev/null 2>&1; then
-            gh release upload v1.1.0 \
+          if gh release view v1.2.0 >/dev/null 2>&1; then
+            gh release upload v1.2.0 \
               "release/CrossAim_Power.exe" \
-              "CrossAim_Power_v1.1.0_Windows.zip" \
+              "CrossAim_Power_v1.2.0_Windows.zip" \
               --clobber
           else
-            gh release create v1.1.0 \
+            gh release create v1.2.0 \
               "release/CrossAim_Power.exe" \
-              "CrossAim_Power_v1.1.0_Windows.zip" \
-              --title "CrossAim Power v1.1.0" \
-              --notes "CrossAim Power v1.1.0 fixes compact-window overlap with responsive scrollable panels and automatic stacked layout, plus tray support and adjustable reaction speed."
+              "CrossAim_Power_v1.2.0_Windows.zip" \
+              --title "CrossAim Power v1.2.0" \
+              --notes "CrossAim Power v1.2.0 adds the Made by Swir footer with GitHub links, reticle presets, multi-monitor selection, live adaptive-color preview, persistent window layout, and the responsive Power Smart Contrast interface."
           fi
