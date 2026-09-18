@@ -1,0 +1,32 @@
+name: README Docs
+
+on:
+  pull_request:
+    paths:
+      - "README.md"
+      - "docs/**"
+      - "assets/readme/**"
+      - "scripts/check_readme_docs.py"
+      - ".github/workflows/readme-docs.yml"
+  push:
+    branches: [main]
+    paths:
+      - "README.md"
+      - "docs/**"
+      - "assets/readme/**"
+      - "scripts/check_readme_docs.py"
+      - ".github/workflows/readme-docs.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Verify README and progress SVGs
+        run: python scripts/check_readme_docs.py --check
