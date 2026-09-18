@@ -1,137 +1,127 @@
-# 🎯 CrossAim Power
+<!-- SWIR-README-STANDARD:v2 -->
 
-**Adaptive crosshair overlay for Windows and FPS games.**
+<div align="center">
 
-CrossAim Power is a lightweight customizable crosshair overlay with a smart color engine that reacts to the pixels around the center of the screen and chooses a highly visible reticle color.
+<img width="100%" src="assets/readme/hero.svg" alt="CrossAim Power — adaptive customizable crosshair overlay for Windows" />
 
-![CrossAim Power](crossaim_power.png)
+<br>
 
-## 🆕 v1.2.0
+![Windows](https://img.shields.io/badge/Windows-10%20%7C%2011-02050A?style=for-the-badge&logo=windows11&logoColor=62E5FF)
+![Python](https://img.shields.io/badge/Python-3.10%2B-02050A?style=for-the-badge&logo=python&logoColor=62E5FF)
+![Release](https://img.shields.io/badge/Release-v1.2.0-02050A?style=for-the-badge&logo=github&logoColor=62E5FF)
+![License](https://img.shields.io/badge/License-MIT-02050A?style=for-the-badge&logo=opensourceinitiative&logoColor=62E5FF)
 
-- Permanent footer: **Made by Swir** with clickable GitHub profile and repository links
-- Reticle preset library: CS2 Tiny Dot, Precision Cross, Ring + Dot, Classic Cross, High Visibility
-- Multi-monitor selector and correct centering on the chosen display
-- Live adaptive-color preview chip showing the current reticle color
-- Window position/size and splitter layout are remembered
-- Existing compact responsive layout, tray controls and adaptive engine retained
+<img width="96" src="crossaim_power.svg" alt="CrossAim Power reticle icon" />
 
-## 🆕 v1.1.0
+[**Highlights**](#-highlights) · [**Quick Start**](#-quick-start) · [**Controls**](#-controls) · [**Releases**](#-releases)
 
-- Responsive control panel: no more overlapping widgets when the window is made smaller
-- Scrollable left and right panels
-- Resizable splitter between settings and editor
-- Multi-monitor selector
-- System tray support
-- Optional close-to-tray behavior
-- Optional start minimized
-- Adjustable adaptive-color reaction interval
-- Clear overlay ON/OFF indicator
-- Improved handling for compact window sizes and high-DPI displays
+</div>
+
+# CrossAim Power
+
+**Adaptive, customizable crosshair overlay for Windows and FPS games.**
+
+<img width="100%" src="assets/readme/progress-card.svg" alt="CrossAim Power product progress — N/A because no authoritative product roadmap is maintained" />
+
+Product progress: **N/A**. The repository has a released v1.2.0 build, but no authoritative measurable product-completion roadmap; documentation status is not used as a readiness score.
+
+## 📍 Project Status
+
+| Item | Status |
+|---|---|
+| Current stage | Released Windows utility |
+| Platform | Windows 10 / 11 |
+| Latest public release | [v1.2.0](https://github.com/Swir/CrossAim_power/releases/tag/v1.2.0) |
+| Product progress | N/A — see [`docs/STATUS.md`](docs/STATUS.md) |
+| License | MIT |
+
+## 🚀 Overview
+
+CrossAim Power is a local PySide6 desktop utility that draws a click-through crosshair overlay and can adapt its reticle color to the pixels around the center of the selected display. It provides preset and custom reticles, multi-monitor placement, persistent settings and an editor without reading game memory or automating aim.
 
 ## ✨ Highlights
 
-- 🎨 **Power Smart Contrast** — dynamic color selection based on the game background
-- 🧠 **Multi-zone analysis** — checks multiple regions around the aiming point
-- ⚫ Dark background → bright/white reticle
-- ⚪ Bright background → dark/black reticle
-- 🌈 Complementary color response for colored scenes
-- 🛡️ Worst-zone contrast protection
-- ✨ Automatic contrasting outline
-- 🧊 Anti-flicker / color hysteresis
-- 🧩 Built-in 32×32 pixel crosshair editor
-- 💾 Presets with JSON import/export
-- 🎮 Per-game process profiles, including `cs2.exe`
-- 🖱️ Optional RMB temporary hide
-- ⌨️ `F8` global overlay toggle
-- 🎯 Pixel-perfect X/Y positioning
-- 🪟 Click-through transparent Windows overlay
+| Feature | What it does |
+|---|---|
+| 🎯 Adaptive reticle | Power Smart Contrast scores surrounding screen zones and selects a visible reticle color |
+| 🖥️ Multi-monitor placement | Selects a display and centers the overlay on that monitor |
+| 🧩 Reticle editor | Edits a 32×32 matrix and supports built-in shapes and presets |
+| 💾 Persistent layout | Saves reticle, monitor, window geometry and splitter state |
+| 🪟 Windows overlay | Uses a transparent, click-through, non-activating overlay window |
+| ⌨️ Fast controls | F8 toggles the overlay; optional RMB hold temporarily hides it |
 
-## 🕹️ Built-in crosshairs
+## ⚙️ Quick Start
 
-Dot • Cross • Cross + Dot • Circle • Circle + Dot • Tiny Ring • T • X • Custom
+### Recommended — Windows release
 
-## 🚀 Quick start
+Download the verified v1.2.0 assets from [GitHub Releases](https://github.com/Swir/CrossAim_power/releases/tag/v1.2.0). The release includes `CrossAim_Power.exe` and a Windows ZIP package.
 
-### Option 1 — Release
-
-Download the newest Windows build from **Releases** and run:
-
-`CrossAim_Power.exe`
-
-### Option 2 — Python
-
-Requires Python 3.10+.
+### From source
 
 ```bash
+git clone https://github.com/Swir/CrossAim_power.git
+cd CrossAim_power
 py -m pip install -r requirements.txt
 py crossaim_power_v12.py
 ```
 
-Or simply launch:
+`run.bat` provides the repository's Windows convenience launcher.
 
-```text
-run.bat
-```
+## 📋 Requirements / Compatibility
 
-## 🔨 Build Windows EXE
+- Windows 10 or Windows 11.
+- Python 3.10+ when running from source.
+- PySide6 6.7+, MSS 9.0+ and Pillow 12.0+ as declared in `requirements.txt`.
+- Borderless / fullscreen-windowed mode is generally the most reliable way to keep a normal desktop overlay visible above a game.
 
-Run:
-
-```text
-build_exe.bat
-```
-
-The generated application will be:
-
-```text
-dist\CrossAim_Power.exe
-```
-
-## 🎮 CS2
-
-For the most reliable overlay behavior use:
-
-**Fullscreen Windowed / Borderless**
-
-CrossAim Power is designed as a visual overlay. It does **not** read or write CS2 memory, inject DLLs, inspect player/entity data, automate aiming, control recoil, or automate shooting.
-
-Third-party anti-cheat and tournament platform rules can differ. Always check the current rules of the platform where you play.
-
-## ⌨️ Controls
+## 🎮 Controls
 
 | Control | Action |
 |---|---|
-| `F8` | Show / hide overlay |
-| Hold `RMB` | Temporarily hide (optional) |
+| `F8` | Show / hide the overlay |
+| Hold `RMB` | Temporarily hide the overlay when enabled |
 | `Ctrl + Alt + Arrow` | Move by 1 pixel |
 | `Ctrl + Alt + Shift + Arrow` | Move by 10 pixels |
 
-## 🧠 Adaptive modes
+## 🧠 Technology / Architecture
 
-**Power Smart Contrast** is the recommended mode. It evaluates multiple surrounding zones and selects a stable high-contrast color.
+| Layer | Technology / role |
+|---|---|
+| Desktop UI | Python + PySide6 |
+| Screen sampling | MSS |
+| Windows overlay behavior | Qt window flags + Win32 APIs |
+| Packaging | PyInstaller workflow / repository build script |
 
-Other modes:
+The v1.2 entry point extends the existing v1.1 responsive UI while reusing the original overlay and adaptive-color core.
 
-- Adaptive Complement
-- Adaptive B/W
-- Adaptive Invert
-- Fixed color
+## 🔐 Privacy, Fair Play & Limitations
 
-## 📦 Requirements
+CrossAim Power runs locally and does not require an account or cloud service. Its current source implements a visual overlay and screen-pixel sampling; it does not read/write CS2 process memory, inject DLLs, inspect entity/player data, control recoil, automate aiming or fire weapons.
 
-- Windows 10 / 11
-- Python 3.10+ when running from source
-- PySide6
-- MSS
+Game, anti-cheat and tournament rules vary. A visual overlay can still be disallowed by a particular platform, so check the rules that apply to your environment.
 
-## 🔐 Privacy
+## 🗺️ Roadmap / Progress
 
-CrossAim Power runs locally. It does not require an account or cloud connection.
+The repository does not currently maintain an authoritative measurable product roadmap. Product progress therefore remains **N/A** rather than inventing a completion percentage.
 
-## 📄 License
+[**Open status →**](docs/STATUS.md)
 
-MIT License — see [LICENSE](LICENSE).
+## 📦 Releases
 
----
+Latest verified public release: **v1.2.0**, published with a Windows EXE and ZIP package.
 
-Made by **Swir** • [GitHub](https://github.com/Swir) • [CrossAim Power repository](https://github.com/Swir/CrossAim_power)
+[**GitHub Releases →**](https://github.com/Swir/CrossAim_power/releases)
+
+## 🔎 Search Keywords
+
+`windows crosshair overlay` • `adaptive crosshair windows` • `custom reticle overlay` • `fps crosshair tool` • `PySide6 crosshair` • `multi monitor crosshair` • `smart contrast reticle` • `CS2 visual overlay` • `custom crosshair editor` • `click through overlay windows` • `local gaming overlay` • `Windows reticle utility`
+
+<div align="center">
+
+### `AIM • ADAPT • CUSTOMIZE • PLAY`
+
+⭐ **If this project is useful, consider leaving a star.**
+
+[**← SWIR profile**](https://github.com/Swir) · [**All projects →**](https://github.com/Swir?tab=repositories)
+
+</div>

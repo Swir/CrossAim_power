@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="320" viewBox="0 0 1200 320" role="img" aria-labelledby="title desc">
+<title id="title">CrossAim Power — adaptive Windows crosshair overlay</title><desc id="desc">SWIR project banner for CrossAim Power, a customizable local crosshair overlay for Windows FPS games.</desc>
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#02050A"/><stop offset=".58" stop-color="#07111C"/><stop offset="1" stop-color="#02050A"/></linearGradient><linearGradient id="cyan" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#0088FF"/><stop offset=".5" stop-color="#62E5FF"/><stop offset="1" stop-color="#0088FF"/></linearGradient><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#62E5FF" stroke-opacity=".05"/></pattern></defs>
+<rect width="1200" height="320" rx="26" fill="url(#bg)"/><rect x="1" y="1" width="1198" height="318" rx="25" fill="none" stroke="#62E5FF" stroke-opacity=".24"/><rect width="1200" height="320" rx="26" fill="url(#grid)"/>
+<g transform="translate(70 68)"><rect width="168" height="168" rx="34" fill="#07111C" stroke="#62E5FF" stroke-opacity=".5"/><circle cx="84" cy="84" r="47" fill="none" stroke="#62E5FF" stroke-width="5"/><path d="M84 24v38M84 106v38M24 84h38M106 84h38" stroke="url(#cyan)" stroke-width="7" stroke-linecap="round"/><circle cx="84" cy="84" r="7" fill="#F4FAFF"/></g>
+<text x="282" y="68" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="700" letter-spacing="4" fill="#62E5FF">SWIR PROJECT</text>
+<text x="282" y="144" font-family="Segoe UI,Arial,sans-serif" font-size="56" font-weight="800" fill="#F4FAFF">CrossAim Power</text>
+<text x="284" y="189" font-family="Segoe UI,Arial,sans-serif" font-size="23" fill="#B8D2E0">Adaptive, customizable crosshair overlay for Windows</text>
+<text x="284" y="232" font-family="Segoe UI,Arial,sans-serif" font-size="16" font-weight="650" letter-spacing="1.5" fill="#62E5FF">WINDOWS 10/11  •  PYSIDE6  •  LOCAL FPS OVERLAY</text>
+</svg>

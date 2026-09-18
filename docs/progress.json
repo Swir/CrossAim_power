@@ -1,0 +1,11 @@
+{
+  "schema": 1,
+  "project": "CrossAim Power",
+  "scope": "Product roadmap / readiness",
+  "status": "N/A",
+  "percentage": null,
+  "counter": null,
+  "latest_public_release": "v1.2.0",
+  "reason": "No authoritative measurable product roadmap is maintained. Documentation progress must not be presented as application completion.",
+  "source": "docs/progress.json"
+}
