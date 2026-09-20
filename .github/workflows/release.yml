@@ -30,6 +30,9 @@ jobs:
       - name: Generate app icon
         run: python make_icon.py
 
+      - name: Syntax check
+        run: python -m py_compile crossaim_power.py crossaim_power_v11.py crossaim_power_v12.py crossaim_power_v13.py crossaim_power_v131.py
+
       - name: Build EXE
         run: >
           pyinstaller --noconfirm --clean --windowed --onefile
@@ -37,7 +40,7 @@ jobs:
           --icon crossaim_power.ico
           --add-data "crossaim_power.png;."
           --collect-all mss
-          crossaim_power_v13.py
+          crossaim_power_v131.py
 
       - name: Package
         shell: pwsh
@@ -46,22 +49,23 @@ jobs:
           Copy-Item dist\CrossAim_Power.exe release\CrossAim_Power.exe
           Copy-Item README.md release\README.md
           Copy-Item LICENSE release\LICENSE
-          Compress-Archive -Path release\* -DestinationPath CrossAim_Power_v1.3.0_Windows.zip -Force
+          Copy-Item RELEASE_NOTES.md release\RELEASE_NOTES.md
+          Compress-Archive -Path release\* -DestinationPath CrossAim_Power_v1.3.1_Windows.zip -Force
 
-      - name: Create or update v1.3.0 release
+      - name: Create or update v1.3.1 release
         shell: bash
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          if gh release view v1.3.0 >/dev/null 2>&1; then
-            gh release upload v1.3.0 \
+          if gh release view v1.3.1 >/dev/null 2>&1; then
+            gh release upload v1.3.1 \
               "release/CrossAim_Power.exe" \
-              "CrossAim_Power_v1.3.0_Windows.zip" \
+              "CrossAim_Power_v1.3.1_Windows.zip" \
               --clobber
           else
-            gh release create v1.3.0 \
+            gh release create v1.3.1 \
               "release/CrossAim_Power.exe" \
-              "CrossAim_Power_v1.3.0_Windows.zip" \
-              --title "CrossAim Power v1.3.0" \
-              --notes "CrossAim Power v1.3.0 adds a native Win32 TOPMOST watchdog, foreground/fullscreen detection, automatic fullscreen-game monitor following, manual overlay recovery, and configurable compatibility refresh while retaining the responsive UI and Made by Swir footer."
+              "CrossAim_Power_v1.3.1_Windows.zip" \
+              --title "CrossAim Power v1.3.1" \
+              --notes-file RELEASE_NOTES.md
           fi

@@ -8,7 +8,7 @@
 
 ![Windows](https://img.shields.io/badge/Windows-10%20%7C%2011-02050A?style=for-the-badge&logo=windows11&logoColor=62E5FF)
 ![Python](https://img.shields.io/badge/Python-3.10%2B-02050A?style=for-the-badge&logo=python&logoColor=62E5FF)
-![Release](https://img.shields.io/badge/Release-v1.3.0-02050A?style=for-the-badge&logo=github&logoColor=62E5FF)
+![Release](https://img.shields.io/badge/Release-v1.3.1-02050A?style=for-the-badge&logo=github&logoColor=62E5FF)
 ![License](https://img.shields.io/badge/License-MIT-02050A?style=for-the-badge&logo=opensourceinitiative&logoColor=62E5FF)
 
 <img width="96" src="crossaim_power.svg" alt="CrossAim Power reticle icon" />
@@ -23,7 +23,7 @@
 
 <img width="100%" src="assets/readme/progress-card.svg" alt="CrossAim Power product progress — N/A because no authoritative product roadmap is maintained" />
 
-Product progress: **N/A**. The repository has a released v1.3.0 build, but no authoritative measurable product-completion roadmap; documentation status is not used as a readiness score.
+Product progress: **N/A**. The repository has a released v1.3.1 build, but no authoritative measurable product-completion roadmap; documentation status is not used as a readiness score.
 
 ## 📍 Project Status
 
@@ -31,7 +31,7 @@ Product progress: **N/A**. The repository has a released v1.3.0 build, but no au
 |---|---|
 | Current stage | Released Windows utility |
 | Platform | Windows 10 / 11 |
-| Latest public release | [v1.3.0](https://github.com/Swir/CrossAim_power/releases/tag/v1.3.0) |
+| Latest public release | [v1.3.1](https://github.com/Swir/CrossAim_power/releases/tag/v1.3.1) |
 | Product progress | N/A — see [`docs/STATUS.md`](docs/STATUS.md) |
 | License | MIT |
 
@@ -39,7 +39,7 @@ Product progress: **N/A**. The repository has a released v1.3.0 build, but no au
 
 CrossAim Power is a local PySide6 desktop utility that draws a click-through crosshair overlay and can adapt its reticle color to the pixels around the center of the selected display. It provides preset and custom reticles, multi-monitor placement, persistent settings and an editor without reading game memory or automating aim.
 
-## 🆕 v1.3.0
+## 🆕 v1.3.1
 
 - **Game Visibility Watchdog** periodically re-asserts native Win32 TOPMOST without stealing focus.
 - Re-applies layered, click-through, tool-window and no-activate overlay styles.
@@ -64,7 +64,7 @@ CrossAim Power is a local PySide6 desktop utility that draws a click-through cro
 
 ### Recommended — Windows release
 
-Download the verified v1.3.0 assets from [GitHub Releases](https://github.com/Swir/CrossAim_power/releases/tag/v1.3.0). The release includes `CrossAim_Power.exe` and a Windows ZIP package.
+Download the verified v1.3.1 assets from [GitHub Releases](https://github.com/Swir/CrossAim_power/releases/tag/v1.3.1). The release includes `CrossAim_Power.exe` and a Windows ZIP package.
 
 ### From source
 
@@ -72,7 +72,7 @@ Download the verified v1.3.0 assets from [GitHub Releases](https://github.com/Sw
 git clone https://github.com/Swir/CrossAim_power.git
 cd CrossAim_power
 py -m pip install -r requirements.txt
-py crossaim_power_v13.py
+py crossaim_power_v131.py
 ```
 
 `run.bat` provides the repository's Windows convenience launcher.
@@ -88,7 +88,7 @@ py crossaim_power_v13.py
 
 | Control | Action |
 |---|---|
-| `F8` | Show / hide the overlay |
+| `F8` | Show / hide the overlay |\n| `F9` | Hard re-assert overlay above the foreground game |
 | Hold `RMB` | Temporarily hide the overlay when enabled |
 | `Ctrl + Alt + Arrow` | Move by 1 pixel |
 | `Ctrl + Alt + Shift + Arrow` | Move by 10 pixels |
@@ -102,7 +102,7 @@ py crossaim_power_v13.py
 | Windows overlay behavior | Qt window flags + Win32 APIs |
 | Packaging | PyInstaller workflow / repository build script |
 
-The v1.2 entry point extends the existing v1.1 responsive UI while reusing the original overlay and adaptive-color core.
+The v1.3.1 entry point layers Smart Game Mode, hard TOPMOST recovery and diagnostics over the v1.3 compatibility watchdog while reusing the adaptive-color core and responsive UI.
 
 ## 🔐 Privacy, Fair Play & Limitations
 
@@ -118,7 +118,7 @@ The repository does not currently maintain an authoritative measurable product r
 
 ## 📦 Releases
 
-Latest verified public release: **v1.3.0**, published with a Windows EXE and ZIP package.
+Latest verified public release: **v1.3.1**, published with a Windows EXE and ZIP package.
 
 [**GitHub Releases →**](https://github.com/Swir/CrossAim_power/releases)
 
