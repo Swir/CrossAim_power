@@ -17,6 +17,12 @@
 
 </div>
 
+## 📸 Screenshot
+
+![CrossAim_power application screenshot](docs/screenshots/application.jpg)
+
+Reticle editor and control window on Windows.
+
 # CrossAim Power
 
 **Adaptive, customizable crosshair overlay for Windows and FPS games.**
